@@ -3,3 +3,98 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+  width: 1000px;
+  margin: 0px auto;
+  background-color: white;
+}
+
+.container-deux {
+  width: 1000px;
+  margin: 0px auto;
+  background-color: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+}
+.Recherche {
+  width: 500px;
+  height: 30px;
+  background-color: #f5f6f7;
+  border-radius: 8px;
+  margin-left: 15px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Recherche input {
+  width: 500px;
+  border: none;
+  background-color: #f5f6f7;
+  margin-left: 10px;
+}
+
+.Recherche .icone {
+  color: grey;
+}
+
+.right-header {
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.contact {
+  padding: 15px;
+}
+
+.contact button {
+  background-color: white;
+  color: #0cadb7;
+  border: solid #0cadb7 1px;
+}
+
+.send-button {
+  background-color: #0cadb7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  width: 150px;
+}
+
+.space-bottom {
+  margin-bottom: 50px;
+}
+
+/* HOME */
+
+.owner {
+  text-align: center;
+}
+
+.item {
+  width: 190px;
+  height: 327px;
+}
+
+.offers {
+  margin-bottom: 10px;
+  border: solid 1px grey;
+}

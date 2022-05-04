@@ -1,27 +1,32 @@
 import "./App.css";
 
-import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+// Pages
+import Home from "./pages/Home";
+// import Offer from "./pages/Offer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import axios from "axios";
+//Import des icones
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+library.add(faMagnifyingGlass);
 
 function App() {
-  const [data, setData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        "https://lereacteur-vinted-api.herokuapp.com/offers"
-      );
-      // console.log(response.data);
-      setData(response.data);
-      setIsLoading(false);
-    };
-    fetchData();
-  }, []);
-
-  return isLoading ? <span>En cours de chargement... </span> : <h2>Hello</h2>;
+  return (
+    <Router>
+      <Header />
+      <nav>
+        <ul>
+          <il>
+            <Link to="/home"> Home</Link>
+          </il>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
