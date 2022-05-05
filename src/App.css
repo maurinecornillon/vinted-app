@@ -50,6 +50,7 @@
 
 .Recherche .icone {
   color: grey;
+  margin-left: 10px;
 }
 
 .right-header {
@@ -92,9 +93,56 @@
 .item {
   width: 190px;
   height: 327px;
+  object-fit: cover;
 }
 
 .offers {
   margin-bottom: 10px;
   border: solid 1px grey;
+  height: 410px;
+}
+
+/* OFFER */
+
+body {
+  background-color: white;
+}
+
+.offer-only {
+  width: 1000px;
+  margin: 0px auto;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.offer-only-right {
+  width: 270px;
+  height: 400px;
+  padding: 30px;
+  background-color: #f5f6f7;
+}
+
+.photo {
+  object-fit: cover;
+  width: 300px;
+  height: 400px;
+}
+
+.price-offer {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+.acheter {
+  background-color: #0cadb7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  width: 200px;
+  text-align: center;
 }

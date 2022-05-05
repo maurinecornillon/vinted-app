@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 // Pages
 import Home from "./pages/Home";
-// import Offer from "./pages/Offer";
+import Offer from "../src/pages/Offer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 //Import des icones
@@ -15,15 +15,10 @@ function App() {
   return (
     <Router>
       <Header />
-      <nav>
-        <ul>
-          <il>
-            <Link to="/home"> Home</Link>
-          </il>
-        </ul>
-      </nav>
+      <Link to="/">Home</Link>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/offer/:id" element={<Offer />} />
       </Routes>
     </Router>
   );
