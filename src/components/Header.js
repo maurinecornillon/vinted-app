@@ -1,13 +1,19 @@
 import logo from "../assets/img/logo.svg";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Header = () => {
+import { useNavigate } from "react-router-dom";
+
+import { Link } from "react-router-dom";
+
+const Header = ({ handleToken, userToken }) => {
+  const navigate = useNavigate();
   return (
     <>
       <header>
         <div className="container">
           <section className="header">
             <section className="left-header">
-              <img src={logo} alt="logo" />
+              <img src={logo} onClick={() => navigate("/")} alt="logo" />
 
               <div className="Recherche">
                 <FontAwesomeIcon className="icone" icon="magnifying-glass" />
@@ -17,16 +23,39 @@ const Header = () => {
             <section className="right-header">
               <div className="contact">
                 <i className="fa-solid fa-comments"></i>
+                {!userToken ? (
+                  <>
+                    <Link to="/signup">
+                      <button>S'inscrire</button>
+                    </Link>
+                    <br />
+                    <Link to="/login">
+                      <button>Connexion</button>
+                    </Link>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => {
+                      handleToken();
+                    }}
+                  >
+                    Déconnexion
+                  </button>
+                )}
 
-                <button>S'inscrire</button>
-
-                <button>Connectez-vous</button>
+                <br />
               </div>
-              <button className="send-button">Vendre tes articles</button>
+              <button
+                className="send-button"
+                onClick={() => navigate("/publish")}
+              >
+                Vendre tes articles
+              </button>
             </section>
           </section>
         </div>
-        <div className="space-bottom"></div>
+
+        {/* <div className="space-bottom"></div> */}
       </header>
     </>
   );
