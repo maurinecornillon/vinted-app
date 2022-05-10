@@ -20,7 +20,7 @@ const LogIn = ({ handleToken }) => {
     event.preventDefault(); // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire
     try {
       const response = await axios.post(
-        "https://vinted-backend-app.herokuapp.com/user/login",
+        "https://vinted-backend-app.herokuapp.com/login",
         {
           email: email,
           password: password,

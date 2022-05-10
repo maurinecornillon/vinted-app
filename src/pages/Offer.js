@@ -12,7 +12,7 @@ function Offer() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://vinted-backend-app.herokuapp.com/offer/${id}`
+        `https://vinted-backend-app.herokuapp.com/offers/${id}`
       );
       console.log(response.data);
       setData(response.data);
