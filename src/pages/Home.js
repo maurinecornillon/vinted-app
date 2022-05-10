@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offers?limit=4&page=${page}`
+        `https://vinted-backend-app.herokuapp.com/offers?limit=1&page=${page}`
       );
 
       setData(response.data);

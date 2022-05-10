@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Publish = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const Publish = () => {
 
   const [data, setData] = useState(null);
 
-  const handleSendOffer = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setPublishment(true);
 
@@ -37,7 +37,7 @@ const Publish = () => {
 
     try {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        "https://vinted-backend-app.herokuapp.com/offer/publish",
         formData,
         {
           headers: {
@@ -47,21 +47,23 @@ const Publish = () => {
         }
       );
       console.log(Cookies.get("userToken"));
+
       setData(response.data);
       setPublishment(false);
-      console.log(data);
+      console.log(setPublishment);
+      console.log(response.data);
     } catch (error) {
       console.log(error);
       console.log(error.message);
     }
   };
 
-  return (
+  return Cookies.get("userToken") ? (
     <>
       <div className="container-deux">
         <div className="publish-container">
           <h2>Vends ton article</h2>
-          <form className="publish_form" onSubmit={handleSendOffer}>
+          <form className="publish_form" onSubmit={handleSubmit}>
             <input
               className="add_picture_input"
               type="file"
@@ -72,35 +74,39 @@ const Publish = () => {
             <input
               type="text"
               placeholder="ex: Pull manche longue"
+              value={title}
               onChange={(event) => {
                 setTitle(event.target.value);
               }}
             />
-            <textarea
-              name="description"
-              id="description"
-              rows="5"
-              placeholder="ex: En bon état"
+            <input
+              type="text"
+              placeholder="Description"
+              value={description}
               onChange={(event) => {
                 setDescription(event.target.value);
               }}
-            ></textarea>
+            />
+
             <input
               type="text"
               placeholder="ex: Nike"
+              value={brand}
               onChange={(event) => {
                 setBrand(event.target.value);
               }}
             />
             <input
               type="text"
-              placeholder="ex: L / 40 / 12"
+              placeholder="ex: M / 38 / 10"
+              value={size}
               onChange={(event) => {
                 setSize(event.target.value);
               }}
             />
             <input
               type="text"
+              value={color}
               placeholder="ex: Blanc et noir"
               onChange={(event) => {
                 setColor(event.target.value);
@@ -109,12 +115,14 @@ const Publish = () => {
             <input
               type="text"
               placeholder="ex: Neuf avec étiquette"
+              value={condition}
               onChange={(event) => {
                 setCondition(event.target.value);
               }}
             />
             <input
               type="text"
+              value={city}
               placeholder="ex: Paris"
               onChange={(event) => {
                 setCity(event.target.value);
@@ -123,6 +131,7 @@ const Publish = () => {
             <input
               className="price_input"
               type="price"
+              value={price}
               placeholder="0,00 €"
               onChange={(event) => {
                 setPrice(event.target.value);
@@ -141,6 +150,8 @@ const Publish = () => {
         </div>
       </div>
     </>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

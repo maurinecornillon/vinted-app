@@ -1,5 +1,10 @@
 import "./App.css";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useState } from "react";
+
+// components
 import Header from "./components/Header";
 // Pages
 import Home from "./pages/Home";
@@ -7,9 +12,6 @@ import Offer from "../src/pages/Offer";
 import SignUp from "../src/pages/SignUp";
 import LogIn from "../src/pages/LogIn";
 import Publish from "../src/pages/Publish";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Cookies from "js-cookie";
-import { useState } from "react";
 
 //Import des icones
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -21,13 +23,16 @@ function App() {
 
   const handleToken = (token) => {
     if (token) {
+      console.log("Création d'un cookie");
       Cookies.set("userToken", token, { expires: 7 });
       setUserToken(token);
     } else {
+      console.log("Suppression d'un cookie");
       Cookies.remove("userToken");
       setUserToken(null);
     }
   };
+
   return (
     <Router>
       <Header handleToken={handleToken} userToken={userToken} />
