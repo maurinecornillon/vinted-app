@@ -11,9 +11,10 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://vinted-backend-app.herokuapp.com/offers?limit=1&page=${page}`
+        `https://vinted-backend-app.herokuapp.com/offers?limit=4&page=
+${page}`
       );
-
+      console.log(response.data);
       setData(response.data);
       setIsLoading(false);
     };
@@ -53,7 +54,7 @@ function Home() {
             <Link className="link" to={`/offer/${item._id}`} key={item._id}>
               <div>
                 <div className="offers">
-                  <div className="owner">{item.owner.account.username} </div>
+                  <div className="owner">{item.owner.username} </div>
                   {item.product_image.secure_url && (
                     <img
                       className="item"

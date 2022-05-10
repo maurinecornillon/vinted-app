@@ -37,7 +37,7 @@ const Publish = () => {
 
     try {
       const response = await axios.post(
-        "https://vinted-backend-app.herokuapp.com/offer/publish",
+        "https://vinted-backend-app.herokuapp.com/publish",
         formData,
         {
           headers: {
@@ -53,100 +53,161 @@ const Publish = () => {
       console.log(setPublishment);
       console.log(response.data);
     } catch (error) {
-      console.log(error);
-      console.log(error.message);
+      console.log(error.response);
     }
   };
 
   return Cookies.get("userToken") ? (
     <>
-      <div className="container-deux">
-        <div className="publish-container">
-          <h2>Vends ton article</h2>
-          <form className="publish_form" onSubmit={handleSubmit}>
-            <input
-              className="add_picture_input"
-              type="file"
-              onChange={(event) => {
-                setPictures(event.target.files[0]);
-              }}
-            />
-            <input
-              type="text"
-              placeholder="ex: Pull manche longue"
-              value={title}
-              onChange={(event) => {
-                setTitle(event.target.value);
-              }}
-            />
-            <input
-              type="text"
-              placeholder="Description"
-              value={description}
-              onChange={(event) => {
-                setDescription(event.target.value);
-              }}
-            />
+      <div className="background">
+        <div className="">
+          <div className="publish-container">
+            <h2>Vends ton article</h2>
 
-            <input
-              type="text"
-              placeholder="ex: Nike"
-              value={brand}
-              onChange={(event) => {
-                setBrand(event.target.value);
-              }}
-            />
-            <input
-              type="text"
-              placeholder="ex: M / 38 / 10"
-              value={size}
-              onChange={(event) => {
-                setSize(event.target.value);
-              }}
-            />
-            <input
-              type="text"
-              value={color}
-              placeholder="ex: Blanc et noir"
-              onChange={(event) => {
-                setColor(event.target.value);
-              }}
-            />
-            <input
-              type="text"
-              placeholder="ex: Neuf avec étiquette"
-              value={condition}
-              onChange={(event) => {
-                setCondition(event.target.value);
-              }}
-            />
-            <input
-              type="text"
-              value={city}
-              placeholder="ex: Paris"
-              onChange={(event) => {
-                setCity(event.target.value);
-              }}
-            />
-            <input
-              className="price_input"
-              type="price"
-              value={price}
-              placeholder="0,00 €"
-              onChange={(event) => {
-                setPrice(event.target.value);
-              }}
-            />
-            {publishment === false && <div className="publishment"></div>}
-            {publishment === true ? (
-              <div className="publishment">En cours de publication</div>
-            ) : (
-              data && navigate(`/offer/${data._id}`)
-            )}
-            <div className="submit_form_btn">
-              <button type="submit"> Ajouter</button>
-            </div>
-          </form>
+            <form className="publish-form" onSubmit={handleSubmit}>
+              <div className="bloc-un"></div>
+              <input
+                className="add-picture-input"
+                type="file"
+                onChange={(event) => {
+                  setPictures(event.target.files[0]);
+                }}
+              />
+              <br />
+              <br />
+
+              <div className="bloc-deux">
+                <div className="left">
+                  <span>Titre</span>
+                  <br />
+                  <br />
+                  <span>Description</span>
+                </div>
+                <div className="right">
+                  <input
+                    type="text"
+                    placeholder="ex: Pull manche longue"
+                    value={title}
+                    onChange={(event) => {
+                      setTitle(event.target.value);
+                    }}
+                  />
+                  <br />
+                  <br />
+
+                  <input
+                    type="text"
+                    placeholder="Description"
+                    value={description}
+                    onChange={(event) => {
+                      setDescription(event.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+
+              <br />
+              <br />
+              <div className="bloc-trois">
+                <div className="left">
+                  <span>Marque</span>
+                  <br />
+                  <br />
+                  <span>Taille</span>
+                  <br />
+                  <br />
+                  <span>Couleur</span>
+                  <br />
+                  <br />
+                  <span>Etat</span>
+                  <br />
+                  <br />
+                  <span>Lieu</span>
+                </div>
+                <div className="right">
+                  <input
+                    type="text"
+                    placeholder="ex: Nike"
+                    value={brand}
+                    onChange={(event) => {
+                      setBrand(event.target.value);
+                    }}
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    placeholder="ex: M / 38 / 10"
+                    value={size}
+                    onChange={(event) => {
+                      setSize(event.target.value);
+                    }}
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    value={color}
+                    placeholder="ex: Blanc et noir"
+                    onChange={(event) => {
+                      setColor(event.target.value);
+                    }}
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    placeholder="ex: Neuf avec étiquette"
+                    value={condition}
+                    onChange={(event) => {
+                      setCondition(event.target.value);
+                    }}
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    value={city}
+                    placeholder="ex: Paris"
+                    onChange={(event) => {
+                      setCity(event.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              <br />
+              <br />
+              <div className="bloc-quatre">
+                <div className="left">
+                  <span>Prix</span>
+                </div>
+                <div className="right">
+                  <input
+                    className="price_input"
+                    type="price"
+                    value={price}
+                    placeholder="0,00 €"
+                    onChange={(event) => {
+                      setPrice(event.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              {publishment === false && <div className="publishment"></div>}
+              {publishment === true ? (
+                <div className="publishment">En cours de publication</div>
+              ) : (
+                data && navigate(`/offer/${data._id}`)
+              )}
+              <br />
+              <div className="submit-form">
+                <button className="add" type="submit">
+                  Ajouter
+                </button>
+              </div>
+              <br />
+            </form>
+          </div>
         </div>
       </div>
     </>

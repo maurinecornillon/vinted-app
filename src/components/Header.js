@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 
-const Header = ({ handleToken, userToken }) => {
+const Header = ({ userToken, handleToken }) => {
   const navigate = useNavigate();
+
   return (
     <>
       <header>
