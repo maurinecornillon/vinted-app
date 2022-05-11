@@ -288,11 +288,36 @@ h2 {
 /* .bloc-un {
   background-color: white;
   width: 100%;
-  display: flex;
+
   padding: 20px;
   height: 100%;
   justify-content: space-between;
 } */
+
+.add_picture_input {
+  display: none;
+}
+
+.bloc-un,
+.text_input_selection {
+  background-color: #fff;
+  margin: 20px 0;
+  box-shadow: 0 0 2px grey;
+  width: 100%;
+}
+
+.pictures_preview {
+  border-radius: 3px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture-btn {
+  border: #0cadb7 solid 1px;
+  padding: 20px;
+}
 
 .bloc-deux {
   background-color: white;
@@ -300,23 +325,27 @@ h2 {
   display: flex;
   padding: 20px;
   justify-content: space-between;
-  border: gainsboro solid 1px;
+
+  box-shadow: 0 0 2px grey;
 }
+
 .bloc-trois {
   background-color: white;
-  border: gainsboro solid 1px;
+
   width: 100%;
   display: flex;
   padding: 20px;
   justify-content: space-between;
+  box-shadow: 0 0 2px grey;
 }
 .bloc-quatre {
   background-color: white;
-  border: gainsboro solid 1px;
+
   width: 100%;
   display: flex;
   padding: 20px;
   justify-content: space-between;
+  box-shadow: 0 0 2px grey;
 }
 
 .right {
@@ -335,12 +364,12 @@ h2 {
   width: 70%;
 }
 
-.add-picture-input {
+/* .add-picture-input {
   border: none;
   border-bottom: grey solid 1px;
   width: 100%;
   height: 100%;
-}
+} */
 
 .add {
   background-color: aquamarine;
