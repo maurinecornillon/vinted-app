@@ -285,28 +285,18 @@ h2 {
   justify-content: space-between;
 }
 
-/* .bloc-un {
-  background-color: white;
-  width: 100%;
-
-  padding: 20px;
-  height: 100%;
-  justify-content: space-between;
-} */
-
-.add_picture_input {
+.add-picture-input {
   display: none;
 }
 
-.bloc-un,
-.text_input_selection {
+.bloc-un {
   background-color: #fff;
   margin: 20px 0;
   box-shadow: 0 0 2px grey;
   width: 100%;
 }
 
-.pictures_preview {
+.picture-bloc {
   border-radius: 3px;
   height: 200px;
   display: flex;
@@ -317,6 +307,14 @@ h2 {
 .picture-btn {
   border: #0cadb7 solid 1px;
   padding: 20px;
+}
+
+.picture-btn span {
+  color: #0cadb7;
+}
+
+.picture-btn span:hover {
+  cursor: pointer;
 }
 
 .bloc-deux {
@@ -338,6 +336,7 @@ h2 {
   justify-content: space-between;
   box-shadow: 0 0 2px grey;
 }
+
 .bloc-quatre {
   background-color: white;
 
@@ -363,13 +362,6 @@ h2 {
   border-bottom: grey solid 1px;
   width: 70%;
 }
-
-/* .add-picture-input {
-  border: none;
-  border-bottom: grey solid 1px;
-  width: 100%;
-  height: 100%;
-} */
 
 .add {
   background-color: aquamarine;

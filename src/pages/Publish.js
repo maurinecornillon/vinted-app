@@ -66,14 +66,14 @@ const Publish = () => {
 
             <form className="publish-form" onSubmit={handleSubmit}>
               <div className="bloc-un">
-                <div className="pictures_preview">
-                  <label className="picture-btn" htmlFor="picture-input">
+                <div className="picture-bloc">
+                  <label className="picture-btn" htmlFor="add-picture-input">
                     <span> Ajoute une photo </span>
                     <span> + </span>
                   </label>
                   <input
-                    id="add_picture_input"
-                    className="add_picture_input"
+                    id="add-picture-input"
+                    className="add-picture-input"
                     type="file"
                     onChange={(event) => {
                       setPictures(event.target.files[0]);
