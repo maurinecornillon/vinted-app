@@ -6,12 +6,14 @@ import { useState } from "react";
 
 // components
 import Header from "./components/Header";
+
 // Pages
 import Home from "./pages/Home";
 import Offer from "../src/pages/Offer";
 import SignUp from "../src/pages/SignUp";
 import LogIn from "../src/pages/LogIn";
 import Publish from "../src/pages/Publish";
+import Payment from "./pages/Payment";
 
 //Import des icones
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -46,6 +48,7 @@ function App() {
         <Route path="/signup" element={<SignUp handleToken={handleToken} />} />
         <Route path="/login" element={<LogIn handleToken={handleToken} />} />
         <Route path="/publish" element={<Publish />} />
+        <Route path="/payment" element={<Payment userToken={userToken} />} />
       </Routes>
     </Router>
   );

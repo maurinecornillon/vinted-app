@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import axios from "axios";
 
@@ -56,7 +56,12 @@ function Offer() {
           </div>
           <br />
           <br />
-          <button className="acheter">Acheter</button>
+          <Link
+            to="/payment"
+            state={{ title: data.product_name, price: data.product_price }}
+          >
+            <button className="acheter">Acheter</button>
+          </Link>
         </div>
       </div>
     </>
