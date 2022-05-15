@@ -21,7 +21,7 @@ const CheckOutForms = ({ price, title }) => {
         "https://vinted-backend-app.herokuapp.com/payment",
 
         {
-          token: stripeResponse.token.id,
+          stripToken: stripeResponse.token.id,
           amount: price,
           title: title,
         }
@@ -33,13 +33,14 @@ const CheckOutForms = ({ price, title }) => {
       }
     } catch (error) {
       console.log(error.message);
+      console.log(error.response.data);
     }
   };
 
   return (
     <form onSubmit={handlePayment}>
       <CardElement />
-      <input type="submit" />
+      <input type="submit" value="Payer" />
       <span style={{ color: "green" }}>{confirmMessage}</span>
     </form>
   );

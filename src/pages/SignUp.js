@@ -28,7 +28,7 @@ const SignUp = ({ handleToken }) => {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire
+    event.preventDefault();
     try {
       const response = await axios.post(
         "https://vinted-backend-app.herokuapp.com/user/signup",
@@ -75,6 +75,7 @@ const SignUp = ({ handleToken }) => {
           checked={newsletter}
           onChange={handleNewsletterChange}
         />
+        <span>S'inscrire à la newsletter</span>
         <input className="sign" type="submit" value="S'inscrire" />
       </form>
     </div>
