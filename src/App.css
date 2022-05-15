@@ -236,7 +236,7 @@ h2 {
   text-align: center;
 }
 
-/* signup */
+/* SIGN UP ET LOGIN */
 
 .signup-container {
   display: flex;
@@ -376,4 +376,46 @@ h2 {
 
 .publish-container span {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* PAYMENT */
+
+.container-payment {
+  width: 600px;
+  margin: 0px auto;
+  background-color: white;
+  border: green 2px solid;
+  padding: 20px;
+}
+
+.payment-title {
+  color: rgb(191, 191, 191);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 25px;
+}
+
+.payment-list span {
+  font-family: Arial, Helvetica, sans-serif;
+  color: grey;
+}
+.payment-list {
+  margin-bottom: 25px;
+}
+
+.payment-total span {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-style: bold;
+}
+
+.payment-total {
+  margin-bottom: 25px;
+}
+
+.payment-text span {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.payment-text {
+  margin-bottom: 25px;
 }

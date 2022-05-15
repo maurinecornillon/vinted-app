@@ -20,15 +20,16 @@ export default function Payment({ userToken }) {
     "pk_test_51KxqpkGhJqwo1Qe2NbREK9q1GlN3NwM3CLFE6d7srimr5aqRTNF8jbKusyADu9kCSH9siOK2SqkiRIYmlo9Mx1DG00aLjMsvJK"
   );
   return (
-    <div className="container">
+    <div className="container-payment">
       {userToken ? (
         <div>
-          <div className="payment_resume">
-            <div className="payment_resume_title">Résumé de la commande</div>
-            <div className="payment_resume_list">
+          <div className="payment-resume">
+            <div className="payment-title">Résumé de la commande</div>
+            <div className="payment-list">
               <ul>
                 <li>
                   <span>Commande</span>
+
                   <span>{price.toFixed(2)} €</span>
                 </li>
                 <li>
@@ -41,15 +42,15 @@ export default function Payment({ userToken }) {
                 </li>
               </ul>
             </div>
-            <div className="divider"></div>
-            <div className="payment_total">
+
+            <div className="payment-total">
               <span>Total</span>
               <span>{totalPrice.toFixed(2)} €</span>
             </div>
-            <div className="payment_text">
+            <div className="payment-text">
               Vous allez payer
-              <span className="payment_text_bold">{totalPrice.toFixed(2)}</span>
-              € (frais de protection et frais de port inclus).
+              <span>{totalPrice.toFixed(2)}</span>€ (frais de protection et
+              frais de port inclus) pour le <span>{title}</span>
             </div>
           </div>
 

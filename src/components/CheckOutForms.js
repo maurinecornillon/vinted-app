@@ -19,6 +19,7 @@ const CheckOutForms = ({ price, title }) => {
       //Envoyer ce stripeTOken à l'api Vinted
       const response = await axios.post(
         "https://vinted-backend-app.herokuapp.com/payment",
+
         {
           token: stripeResponse.token.id,
           amount: price,
@@ -26,6 +27,7 @@ const CheckOutForms = ({ price, title }) => {
         }
       );
 
+      console.log(response.data);
       if (response.data.status === "succeeded") {
         setConfirmMessage("Paiement validé !");
       }
